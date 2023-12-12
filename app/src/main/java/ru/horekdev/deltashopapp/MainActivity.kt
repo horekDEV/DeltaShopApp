@@ -180,7 +180,7 @@ class MainActivity : ComponentActivity() {
                             fontSize = 14.sp,
                             modifier = Modifier.padding(top = 60.dp, start = 10.dp))
 
-                        Text(text = "наш дискорд сервер: ЖМИ",
+                        Text(text = "наш дискорд сервер: ЖМИ НА КУПИТЬ",
                             color = Color.White,
                             fontFamily = FontFamily.Default,
                             fontWeight = FontWeight.Bold,
