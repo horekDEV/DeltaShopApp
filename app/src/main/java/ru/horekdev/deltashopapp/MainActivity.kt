@@ -70,9 +70,6 @@ class MainActivity : ComponentActivity() {
     @Composable
     private fun HeadMenu() {
         val dialogState = remember {DialogState()}
-        var visible by remember {
-            mutableStateOf(true)
-        }
 
         Row(modifier = Modifier
             .background(BgColor)
