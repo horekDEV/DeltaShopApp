@@ -42,7 +42,12 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import ru.horekdev.deltashopapp.ui.theme.*
+import ru.horekdev.deltashopapp.ui.theme.BgBtnBuy
+import ru.horekdev.deltashopapp.ui.theme.BgBtnHelp
+import ru.horekdev.deltashopapp.ui.theme.BgColor
+import ru.horekdev.deltashopapp.ui.theme.BgDialog
+import ru.horekdev.deltashopapp.ui.theme.BgDialogBtn
+import ru.horekdev.deltashopapp.ui.theme.DeltaShopAppTheme
 
 class MainActivity : ComponentActivity() {
     class DialogState {
@@ -65,6 +70,9 @@ class MainActivity : ComponentActivity() {
     @Composable
     private fun HeadMenu() {
         val dialogState = remember {DialogState()}
+        var visible by remember {
+            mutableStateOf(true)
+        }
 
         Row(modifier = Modifier
             .background(BgColor)
@@ -92,7 +100,7 @@ class MainActivity : ComponentActivity() {
                 Text(text = "Помощь",
                     color = Color.Black,
                     fontFamily = FontFamily.Default
-                    )
+                )
 
                 if (dialogState.isOpenHelp) {
                     HelpBtnLogic(dialogState)
@@ -121,7 +129,7 @@ class MainActivity : ComponentActivity() {
                     top = 26.dp, bottom = 6.dp,
                     start = 15.dp))
 
-            Text(text = "Открой для себя низкие \n цены и эксклюзивные \n бонусы на Discord Nitro!",
+            Text(text = "Открой для себя низкие \n цены и эксклюзивные \n бонусы на DeltaShop!",
                 color = Color.White,
                 fontFamily = fontToUnderText,
                 fontSize = 18.sp,
@@ -212,9 +220,9 @@ class MainActivity : ComponentActivity() {
             "3. Discord оставляет за собой право изменять стоимость и содержание Nitro без предварительного уведомления.",
             "4. Вы несете полную ответственность за любое использование аккаунта Nitro, включая обязательство соблюдения условий Discord Community Guidelines.",
             "5. Discord оставляет за собой право отключения или ограничения аккаунта Nitro при нарушении условий использования или обнаружении подозрительной активности.",
-            "6. DeltaNitro не несет ответственности за любые убытки, возникшие в результате использования аккаунта Nitro или его компонентов.",
-            "7. DeltaNitro оставляет за собой право расторгнуть данное лицензионное соглашение и отключить аккаунт Nitro в случае нарушения политики использования или любых других правил Discord.",
-            "8. Все претензии, связанные с аккаунтом Nitro, должны быть направлены в службу поддержки DeltaNitro в соответствии с их правилами и процедурами.",
+            "6. DeltaShop не несет ответственности за любые убытки, возникшие в результате использования аккаунта Nitro или его компонентов.",
+            "7. DeltaShop оставляет за собой право расторгнуть данное лицензионное соглашение и отключить аккаунт Nitro в случае нарушения политики использования или любых других правил Discord.",
+            "8. Все претензии, связанные с аккаунтом Nitro, должны быть направлены в службу поддержки DeltaShop в соответствии с их правилами и процедурами.",
             "Пожалуйста, обратите внимание, что это простое лицензионное соглашение и его содержание может различаться в зависимости от правил и условий, установленных Discord на момент покупки Nitro."
         )
 
@@ -223,7 +231,7 @@ class MainActivity : ComponentActivity() {
                 title = {
                     Column(verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally) {
-                        Text(text = "Лицензионное соглашение при покупке Nitro в Discord^",
+                        Text(text = "Лицензионное соглашение при покупке товаров в DeltaShop",
                             color = Color.White,
                             fontFamily = FontFamily.Default,
                             fontWeight = FontWeight.Bold,
