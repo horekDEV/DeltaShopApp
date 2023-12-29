@@ -248,7 +248,7 @@ class MainActivity : ComponentActivity() {
                         Button(onClick = {
                             val intent = Intent(
                                 Intent.ACTION_VIEW,
-                                Uri.parse("https://discord.gg/YRaRbdDP5B")
+                                Uri.parse("https://t.me/deltashoptg")
                             )
                             this@MainActivity.startActivity(intent)
                             dialogState.isOpenBuy = false
