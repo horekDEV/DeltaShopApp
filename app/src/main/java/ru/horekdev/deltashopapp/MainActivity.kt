@@ -78,7 +78,7 @@ class MainActivity : ComponentActivity() {
 
             Image(
                 modifier = Modifier
-                    .padding(start = 5.dp, top = 15.dp)
+                    .padding(start = 5.dp, top = 3.dp)
                     .size(width = 167.dp, height = 133.dp),
                 contentScale = ContentScale.Crop,
                 painter = painterResource(id = R.drawable.logo),
@@ -87,7 +87,7 @@ class MainActivity : ComponentActivity() {
             Button(onClick = {dialogState.isOpenHelp = true},
                 modifier = Modifier
                     .clip(shape = RectangleShape)
-                    .padding(end = 20.dp, top = 15.dp)
+                    .padding(end = 25.dp, top = 38.dp)
                     .width(105.dp)
                     .height(37.dp),
                 shape = RoundedCornerShape(20.dp),
@@ -123,7 +123,7 @@ class MainActivity : ComponentActivity() {
                 fontWeight = FontWeight.Bold,
                 fontSize = 30.sp,
                 modifier = Modifier.padding(
-                    top = 26.dp, bottom = 6.dp,
+                    top = 3.dp, bottom = 6.dp,
                     start = 15.dp))
 
             Text(text = "Открой для себя низкие \n цены и эксклюзивные \n бонусы на DeltaShop!",
@@ -223,17 +223,17 @@ class MainActivity : ComponentActivity() {
             "Пожалуйста, обратите внимание, что это простое лицензионное соглашение и его содержание может различаться в зависимости от правил и условий, установленных Discord на момент покупки Nitro."
         )
 
-        Column(verticalArrangement = Arrangement.Center) {
+        Column(verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally) {
             AlertDialog(onDismissRequest = {dialogState.isOpenBuy = false}, confirmButton = {},
                 title = {
                     Column(verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally) {
-                        Text(text = "Лицензионное соглашение при покупке товаров в DeltaShop",
+                        Text(text = "Лицензионное соглашение при покупке товаров",
                             color = Color.White,
                             fontFamily = FontFamily.Default,
                             fontWeight = FontWeight.Bold,
-                            fontSize = 10.sp,
-                            modifier = Modifier.padding(bottom = 10.dp))
+                            fontSize = 10.sp)
 
                         LazyColumn(modifier = Modifier
                             .fillMaxHeight(0.85f)
